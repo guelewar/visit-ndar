@@ -20,3 +20,209 @@ header h1 {
   margin: 0;
   font-size: 2.5em;
 }
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h2.title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+h2.title::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: #0056b3;
+  transition: 0.3s;
+}
+
+h2.title:hover::after {
+  width: 100%;
+}
+
+p,
+ul {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.tourisme-images {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px 20px 0px;
+}
+
+.tourisme-images img {
+  width: 48%;
+  border-radius: 10px;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+form {
+  padding: 20px;
+  border-radius: 5px;
+  /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+}
+
+.form-group {
+  margin-bottom: 15px;
+  transition: color 500ms ease;
+}
+
+label {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+  transition: color 500ms ease;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 500ms ease, box-shadow 500ms ease;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+  outline: none;
+}
+
+.form-group:focus-within label {
+  color: #0056b3;
+}
+
+button {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 300ms ease, transform 300ms ease;
+}
+
+button:hover {
+  background-color: #003d80;
+  transform: scale(1.01);
+}
+
+
+footer {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: #0056b3;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Media Queries pour la responsivité */
+
+/* Petits appareils (smartphones) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p,
+  ul {
+    font-size: 1em;
+  }
+
+  .tourisme-images {
+    flex-direction: column;
+  }
+
+  .tourisme-images img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablettes et petits ordinateurs */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  p,
+  ul {
+    font-size: 1.1em;
+  }
+
+  .tourisme-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tourisme-images img {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Grands écrans */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 800px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  p,
+  ul {
+    font-size: 1.2em;
+  }
+}

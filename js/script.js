@@ -5,7 +5,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
   const message = document.getElementById("message").value;
 
   if (name && email && message) {
-    document.getElementById("responseMessage").textContent = "Merci, " + name + "! Votre message a été envoyé.";
+    document.getElementById("responseMessage").textContent = "Merci, " + name + " ! Votre message a été envoyé.";
     document.getElementById("responseMessage").style.color = "green";
     // Réinitialiser le formulaire
     document.getElementById("contactForm").reset();
