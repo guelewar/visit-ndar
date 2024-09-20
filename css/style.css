@@ -258,6 +258,10 @@ footer {
 
 /* Petits écrans */
 @media screen and (max-width: 601px) {
+  .title::after {
+    width: 70px;
+  }
+
   .gallery-section .gallery-list .gallery-item {
     width: 100%;
   }
