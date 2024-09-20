@@ -7,6 +7,10 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 header {
@@ -36,28 +40,19 @@ h2 {
   margin-bottom: 10px;
 }
 
-h2.title {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 5px;
-  transition: 0.3s;
-  cursor: pointer;
+.title {
+  text-transform: uppercase;
+  text-align: center;
 }
 
-h2.title::after {
-  position: absolute;
+.title::after {
   content: "";
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 2px;
-  width: 0;
-  background-color: #0056b3;
-  transition: 0.3s;
-}
-
-h2.title:hover::after {
-  width: 100%;
+  width: 100px;
+  height: 4px;
+  display: block;
+  margin: 2px auto 0;
+  border-radius: 8px;
+  background: #0056b3;
 }
 
 p,
@@ -79,14 +74,38 @@ ul {
 
 .tourisme-images img {
   width: 48%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .responsive-img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-top: 10px;
+}
+
+.gallery-section .gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 0;
+}
+
+.gallery-section .gallery-list .gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  width: calc(100% / 3 - 32px);
+}
+
+.gallery-section .gallery-item .gallery-image {
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  transition: 0.3s ease;
+}
+
+.gallery-section .gallery-item:hover .gallery-image {
+  transform: scale(1.3);
 }
 
 form {
@@ -224,5 +243,22 @@ footer {
   p,
   ul {
     font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gallery-section .gallery-list {
+    gap: 30px;
+  }
+
+  .gallery-section .gallery-list .gallery-item {
+    width: calc(100% / 2 - 30px);
+  }
+}
+
+/* Petits écrans */
+@media screen and (max-width: 601px) {
+  .gallery-section .gallery-list .gallery-item {
+    width: 100%;
   }
 }
